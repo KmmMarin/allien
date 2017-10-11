@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="../Plantilla/template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns="http://www.w3.org/1999/xhtml">
+
+    <ui:define name="content">
+        <p:growl id="message" showDetail="true" />
+        <h:form>
+            <p:panel header="Actualizar Cliente">
+                <p>Ingrese los siguientes campos para actualizar esta información:</p>
+                <p:messages id="messages" showDetail="true" autoUpdate="true" redisplay="false"/>
+                <h:panelGrid id="grid" columns="2" cellpadding="5">
+                    <p:outputLabel value="Nombres:" /> 
+                    <p:inputText id="nombre" value="#{controladorCliente.cliente.nombre}" 
+                                 required="true" requiredMessage="Campo nombres requerido" style="width: 245px"/> 
+                    <p:outputLabel value="Apellidos:" /> 
+                    <p:inputText id="apellidos" value="#{controladorCliente.cliente.apellidos}" 
+                                 required="true" requiredMessage="Campo apellidos requerido" style="width: 245px"/> 
+                    <p:outputLabel value="Cédula:" /> 
+                    <p:inputText id="cedula" value="#{controladorCliente.cliente.cedula}" 
+                                 required="true" requiredMessage="Campo cédula requerido" type="number" style="width: 245px"/>
+                    <p:outputLabel value="Teléfono:" /> 
+                    <p:inputText id="telefono" value="#{controladorCliente.cliente.telefono}" 
+                                 required="true" requiredMessage="Campo teléfono requerido" type="number" style="width: 245px"/> 
+                    <p:outputLabel value="Dirección:" /> 
+                    <p:inputText id="direccion" value="#{controladorCliente.cliente.direccion}" 
+                                 required="true" requiredMessage="Campo dirección requerido" style="width: 245px"/>  
+                    <p:outputLabel value="Correo:" /> 
+                    <p:inputText id="correo" value="#{controladorCliente.cliente.email}" 
+                                 required="true" requiredMessage="Campo correo requerido" style="width: 245px"/> 
+                </h:panelGrid>
+                <p:commandButton id="submitButton" value="Guardar Cambios" action="#{controladorCliente.actualizar()}" icon="ui-icon-person" update="grid"/> 
+                <p:button value="Cancelar" icon="ui-icon-arrowthick-1-w" outcome="lista"/> 
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>

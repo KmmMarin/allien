@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>inicio</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>crearCliente</from-outcome>
+            <to-view-id>/cliente/crear.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listaClientes</from-outcome>
+            <to-view-id>/cliente/lista.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>crearOficina</from-outcome>
+            <to-view-id>/oficina/crear.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listaOficinas</from-outcome>
+            <to-view-id>/oficina/lista.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
